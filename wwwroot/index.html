@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#b4232f">
+    <title>Quezon City Project 4 Branch Public Library</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#" id="brandLink">
+            <span class="brand-mark">QC</span>
+            <span class="brand-name">
+                QUEZON CITY
+                <strong>PROJECT 4 BRANCH PUBLIC LIBRARY</strong>
+            </span>
+        </a>
+
+        <div class="topbar-actions">
+            <span id="userInfo" class="user-info hidden"></span>
+            <button id="logoutButton" class="button button-outline hidden" type="button">Log out</button>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <section id="authSection" class="auth-layout">
+            <div class="auth-intro">
+                <span class="eyebrow">QUEZON CITY PROJECT 4 BRANCH PUBLIC LIBRARY</span>
+                <h1>Discover.<br><span>Learn. Grow.</span></h1>
+                <p>Your library services in one place. Browse books, reserve reading spaces, and manage your library activities online.</p>
+                <div class="intro-strip">
+                    <span>BOOKS</span>
+                    <span>RESERVATIONS</span>
+                    <span>LEARNING SPACES</span>
+                </div>
+            </div>
+
+            <div class="panel auth-panel">
+                <div class="auth-tabs">
+                    <button type="button" class="auth-tab active" id="showLoginTab">Sign In</button>
+                    <button type="button" class="auth-tab" id="showRegisterTab">Sign Up</button>
+                </div>
+
+                <div id="loginPanel">
+                    <h2>Welcome back!</h2>
+                    <p class="muted">Sign in to your library account.</p>
+
+                    <form id="loginForm">
+                        <label for="email">Email address</label>
+                        <input id="email" name="email" type="email" autocomplete="username" required>
+
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+                        <button class="button button-primary full-width" type="submit">Sign In</button>
+                    </form>
+                </div>
+
+                <div id="registerPanel" class="hidden">
+                    <h2>Create your account</h2>
+                    <p class="muted">Register as a library member.</p>
+
+                    <form id="registerForm">
+                        <label for="registerFullName">Full name</label>
+                        <input id="registerFullName" name="fullName" type="text" minlength="2" maxlength="150" autocomplete="name" required>
+
+                        <label for="registerMemberNumber">Member number <span class="optional">(optional)</span></label>
+                        <input id="registerMemberNumber" name="memberNumber" type="text" maxlength="50">
+
+                        <label for="registerEmail">Email address</label>
+                        <input id="registerEmail" name="email" type="email" maxlength="150" autocomplete="email" required>
+
+                        <label for="registerPassword">Password</label>
+                        <input id="registerPassword" name="password" type="password" minlength="8" maxlength="100" autocomplete="new-password" required>
+                        <p class="field-note">Password must contain at least 8 characters.</p>
+
+                        <button class="button button-blue full-width" type="submit">Create Account</button>
+                    </form>
+                </div>
+
+                <p id="authMessage" class="message" role="alert"></p>
+            </div>
+        </section>
+
+        <section id="applicationSection" class="application-layout hidden">
+            <aside class="sidebar">
+                <div class="sidebar-brand">
+                    <span class="sidebar-brand-mark">QC</span>
+                    <div>
+                        <strong>PROJECT 4</strong>
+                        <small>Branch Library Portal</small>
+                    </div>
+                </div>
+
+                <p class="sidebar-heading">MAIN MENU</p>
+                <nav id="navigation">
+                    <button class="nav-link active" data-view="dashboard" type="button">Dashboard</button>
+                    <button class="nav-link" data-view="books" type="button">Books</button>
+                    <button class="nav-link" data-view="bookReservations" type="button">Book Reservations</button>
+                    <button class="nav-link" data-view="borrowings" type="button">Borrowings</button>
+                    <button class="nav-link" data-view="seats" type="button">Seats</button>
+                    <button class="nav-link" data-view="seatReservations" type="button">Seat Reservations</button>
+                    <button class="nav-link" data-view="readingSpaces" type="button">Reading Spaces</button>
+                    <button class="nav-link" data-view="readingSpaceReservations" type="button">Space Reservations</button>
+                    <button class="nav-link staff-only hidden" data-view="qcpl" type="button">QCPL Monitoring</button>
+                    <button class="nav-link staff-only hidden" data-view="reports" type="button">Reports</button>
+                    <button class="nav-link admin-only hidden" data-view="users" type="button">User Management</button>
+                </nav>
+            </aside>
+
+            <section class="content-area">
+                <div class="content-heading">
+                    <div>
+                        <span class="eyebrow">QUEZON CITY PROJECT 4 BRANCH PUBLIC LIBRARY</span>
+                        <h1 id="pageTitle">Dashboard</h1>
+                    </div>
+                    <span id="roleBadge" class="role-badge"></span>
+                </div>
+
+                <div id="viewContainer" class="panel">
+                    <h2>Welcome to the Project 4 Branch Library</h2>
+                    <p class="muted">Choose a section from the menu to get started.</p>
+                </div>
+
+                <p id="pageMessage" class="message" role="status"></p>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        Quezon City Project 4 Branch Public Library · Library Reservation Management System
+    </footer>
+    <script src="js/api.js"></script>
+    <script src="js/books.js"></script>
+    <script src="js/modules.js"></script>
+    <script src="js/app.js?v=2"></script>
+</body>
+</html>
